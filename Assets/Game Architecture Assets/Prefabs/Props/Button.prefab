@@ -93,6 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7759970487933935821}
+  - component: {fileID: 5965017862599917012}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -116,3 +117,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5965017862599917012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7228628399918692633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df41141bd6004d1428ac150bae7b9b94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultMaterial: {fileID: 2100000, guid: 0c3f7cb033567d2468a878461f951093, type: 2}
+  hoverMaterial: {fileID: 2100000, guid: 775c5aec59c27094bbd120cacd8c0f80, type: 2}
+  buttonRender: {fileID: 2785159920739349844}
+  OnPush:
+    m_PersistentCalls:
+      m_Calls: []

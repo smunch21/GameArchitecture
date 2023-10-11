@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - PickCube
+  - Builder
   layers:
   - Default
   - TransparentFX

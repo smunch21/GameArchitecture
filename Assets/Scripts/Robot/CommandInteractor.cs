@@ -28,6 +28,10 @@ public class CommandInteractor : Interactor
                     pointer.transform.position = hitInfo.point;
                     commands.Enqueue(new MoveCommand(agent, hitInfo.point));
                 }
+                else if (hitInfo.transform.CompareTag("Builder"))
+                {
+                    commands.Enqueue(new BuilderCommand(agent, hitInfo.transform.GetComponent<Builder>()));
+                }
             }
             
         }
