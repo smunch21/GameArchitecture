@@ -4,21 +4,23 @@ using UnityEngine;
 
 public class DoorController : MonoBehaviour
 {
-    [SerializeField] private MeshRenderer doorRenderer;
-    [SerializeField] private Material defaultDoorMaterial;
-    [SerializeField] private Material detectedDoorMaterial;
+    /*[SerializeField] private MeshRenderer doorRenderer;
+    *//*[SerializeField] private Material defaultDoorMaterial;
+    [SerializeField] private Material detectedDoorMaterial;*/
+    
     [SerializeField] private Animator doorAnimator;
+    [SerializeField] private const float waitTime = 1.0f;
 
     private bool isLocked = true;
     private float timer = 0;
-    private const float waitTime = 1.0f;
+    
 
     private void OnTriggerEnter(Collider other)
     {
         if (!isLocked && other.CompareTag("Player"))
         {
             timer = 0;
-            doorRenderer.material = detectedDoorMaterial;
+            //doorRenderer.material = detectedDoorMaterial;
         }
     }
 
@@ -39,15 +41,15 @@ public class DoorController : MonoBehaviour
         if( timer >= waitTime)
         {
             timer = waitTime;
-            doorAnimator.SetBool("Door", true);
+            OpenDoor(true);
 
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        doorAnimator.SetBool("Door", false);
-        doorRenderer.material = defaultDoorMaterial;
+        OpenDoor(false);
+        //doorRenderer.material = defaultDoorMaterial;
     }
 
     public void LockDoor()
@@ -60,4 +62,11 @@ public class DoorController : MonoBehaviour
         isLocked = false;
     }
 
+    public void OpenDoor(bool state)
+    {
+        if (!isLocked)
+        {
+            doorAnimator.SetBool("Door", state);
+        }
+    }
 }
