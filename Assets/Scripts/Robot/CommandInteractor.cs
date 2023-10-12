@@ -10,7 +10,7 @@ public class CommandInteractor : Interactor
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private GameObject pointerPrefab;
     [SerializeField] private Camera cam;
-
+    [SerializeField] private Transform attachTransform;
 
 
 
@@ -20,7 +20,7 @@ public class CommandInteractor : Interactor
         if (playerInput.commandPressed)
         {
             Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width /2 , Screen.height /2, 0));
-            if(Physics.Raycast(ray,  out var hitInfo))
+            if (Physics.Raycast(ray, out var hitInfo))
             {
                 if (hitInfo.transform.CompareTag("Ground"))
                 {
@@ -31,6 +31,10 @@ public class CommandInteractor : Interactor
                 else if (hitInfo.transform.CompareTag("Builder"))
                 {
                     commands.Enqueue(new BuilderCommand(agent, hitInfo.transform.GetComponent<Builder>()));
+                } else if (hitInfo.transform.CompareTag("PickCube"))
+                {
+                    commands.Enqueue(new PickupCommand(agent, hitInfo.transform.GetComponent<IPickable>() , attachTransform));
+                  
                 }
             }
             

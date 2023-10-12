@@ -2896,9 +2896,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df41141bd6004d1428ac150bae7b9b94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultMaterial: {fileID: 2100000, guid: bd70145708a27471bbf6560b41ba5003, type: 2}
-  hoverMaterial: {fileID: 2100000, guid: 9e3bd37efb7a44804af6bf013c8bed02, type: 2}
-  buttonRender: {fileID: 923183328}
+  onHoverEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onHoverExit:
+    m_PersistentCalls:
+      m_Calls: []
   OnPush:
     m_PersistentCalls:
       m_Calls:
@@ -3849,10 +3852,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc13430827a34734f9c8fa69813c7730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorRenderer: {fileID: 1938995741}
-  defaultDoorMaterial: {fileID: 2100000, guid: f74b7668737f5d246bdee5800d00b87f, type: 2}
-  detectedDoorMaterial: {fileID: 2100000, guid: 775c5aec59c27094bbd120cacd8c0f80,
-    type: 2}
   doorAnimator: {fileID: 1000729247}
 --- !u!65 &1232104088
 BoxCollider:
@@ -4365,36 +4364,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7ed461d626a3a849ba6445bb4154211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickUpRadius: 0.5
-  redKey: {fileID: 1316260616}
-  redKeyCollected:
+  keyCollected:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 713145032}
-        m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
-        m_MethodName: set_material
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: 775c5aec59c27094bbd120cacd8c0f80,
-            type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1232104087}
-        m_TargetAssemblyTypeName: DoorController, Assembly-CSharp
-        m_MethodName: UnlockDoor
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &1327464701
 GameObject:
   m_ObjectHideFlags: 0
@@ -5336,10 +5308,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc13430827a34734f9c8fa69813c7730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorRenderer: {fileID: 636951981}
-  defaultDoorMaterial: {fileID: 2100000, guid: f74b7668737f5d246bdee5800d00b87f, type: 2}
-  detectedDoorMaterial: {fileID: 2100000, guid: 775c5aec59c27094bbd120cacd8c0f80,
-    type: 2}
   doorAnimator: {fileID: 2039979426}
 --- !u!1 &1469593286
 GameObject:
@@ -7075,6 +7043,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1637275590043850812, guid: b45c767154a688e4e9098fb6c72f40ef,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 1637275590043850812, guid: b45c767154a688e4e9098fb6c72f40ef,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.37
+      objectReference: {fileID: 0}
     - target: {fileID: 2473141736257180455, guid: b45c767154a688e4e9098fb6c72f40ef,
         type: 3}
       propertyPath: playerInput
@@ -7190,7 +7168,7 @@ PrefabInstance:
         type: 3}
       propertyPath: gunRender
       value: 
-      objectReference: {fileID: 2834701424364459810}
+      objectReference: {fileID: 0}
     - target: {fileID: 7897508556965097293, guid: b45c767154a688e4e9098fb6c72f40ef,
         type: 3}
       propertyPath: RocketPool
@@ -7271,12 +7249,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b45c767154a688e4e9098fb6c72f40ef, type: 3}
---- !u!23 &2834701424364459810 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 2834701425450653842, guid: b45c767154a688e4e9098fb6c72f40ef,
-    type: 3}
-  m_PrefabInstance: {fileID: 2834701424364459809}
-  m_PrefabAsset: {fileID: 0}
 --- !u!33 &3218168928502056684
 MeshFilter:
   m_ObjectHideFlags: 0
