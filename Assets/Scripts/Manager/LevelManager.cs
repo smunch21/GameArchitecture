@@ -29,4 +29,9 @@ public class LevelManager : MonoBehaviour
             GameManager.GetInstance().ChangeStates(GameManager.GameState.LevelEnd, this);
         }
     }
+
+    public void EndGame()
+    {
+        GameManager.GetInstance().ChangeStates(GameManager.GameState.GameOver, this);
+    }
 }

@@ -33,6 +33,7 @@ public class CommandInteractor : Interactor
                     commands.Enqueue(new BuilderCommand(agent, hitInfo.transform.GetComponent<Builder>()));
                 } else if (hitInfo.transform.CompareTag("PickCube"))
                 {
+                    commands.Enqueue(new MoveCommand(agent, hitInfo.point));
                     commands.Enqueue(new PickupCommand(agent, hitInfo.transform.GetComponent<IPickable>() , attachTransform));
                   
                 }

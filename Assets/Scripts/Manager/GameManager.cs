@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     
     private int currentLevelIndex = 0;
     private bool isInputActive = false;
+    private Timer timer;
 
     public enum GameState
     {
@@ -104,7 +105,7 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
-        Debug.Log("Game Over, you Lose!");
+        isInputActive = false;
     }
     private void GameEnd()
     {
